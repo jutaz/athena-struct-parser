@@ -34,17 +34,26 @@ import parseStruct from 'athena-struct-parser';
 
 const results = await athenaExpress.query('SELECT struct, foo, bar FROM my_table');
 
-results.struct = parseStruct(results.struct);
+results.Items.map(result => {
+  result.struct = parseStruct(result.struct);
+  return result;
+});
 
-// `results.struct` now contains JS object with data from the struct.
+// `results.struct` now contains JS object with data from the struct:
+// {
+//   "Items": [
+//     {
+//       "struct": {
+//         "foo": "bar",
+//         "baz": [
+//           {
+//             "foe": "moe"
+//           }
+//         ]
+//       }",
+//       "foo": "baz",
+//       "bar": zab
+//     }
+//   ]
+// }
 ```
-
-{
-  "Items": [
-    {
-      "struct": "{foo=bar, baz=[{foe=moe}]}",
-      "foo": "baz",
-      "bar": zab
-    }
-  ]
-}
