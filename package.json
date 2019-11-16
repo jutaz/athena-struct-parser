@@ -6,6 +6,10 @@
   "scripts": {
     "test": "jest"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jutaz/athena-struct-parser.git"
+  },
   "keywords": [
     "athena",
     "aws",
@@ -14,6 +18,10 @@
   ],
   "author": "Justas \"jutaz\" Brazauskas",
   "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/jutaz/athena-struct-parser/issues"
+  },
+  "homepage": "https://github.com/jutaz/athena-struct-parser#readme",
   "devDependencies": {
     "eslint": "^6.6.0",
     "eslint-config-standard": "^14.1.0",
