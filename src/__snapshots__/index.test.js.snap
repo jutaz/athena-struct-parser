@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`index parses given list of boolean primitives 1`] = `
+Array [
+  false,
+  true,
+  false,
+  true,
+]
+`;
+
+exports[`index parses given list with nulls 1`] = `
+Array [
+  "something",
+  "bar",
+  "baz",
+  null,
+  "meh",
+]
+`;
+
+exports[`index parses nested arrays 1`] = `
+Array [
+  Array [
+    "a",
+    "b",
+  ],
+  Array [
+    "v",
+    "b",
+  ],
+]
+`;
+
+exports[`index parses struct 1`] = `
+Object {
+  "creator": "joe.fragrant@7x7.com",
+  "date": "2017-12-11T14:30:00-0700",
+  "date2": "2017-12-11T14:00:00-0700",
+  "email": "7x7.qerqwerqewrqwerqwerqw@qwerqwr.qwer.com",
+  "id": "76033946",
+  "list": Array [
+    Object {
+      "email": "user.name@7x7.com",
+      "id": "392440526",
+      "null_in_list": null,
+      "string_in_list": "accepted",
+    },
+    Object {
+      "email": "matt.damon@7x7.com",
+      "id": "392440522",
+      "null_in_list": null,
+      "string_in_list": "not_responded",
+    },
+    Object {
+      "email": "huh123123@7x7.com",
+      "id": "392440525",
+      "null_in_list": null,
+      "string_in_list": "not_responded",
+      "user_id": "165097",
+    },
+    Object {
+      "email": "rahi.sharma@7x7.com",
+      "id": "392440527",
+      "null_in_list": null,
+      "string_in_list": "accepted",
+    },
+    Object {
+      "email": "uuhhh.a@7x7.com",
+      "id": "392440527",
+      "null_in_list": null,
+      "string_in_list": "not_responded",
+      "user_id": "116927",
+    },
+    Object {
+      "email": "other.name@7x7.com",
+      "id": "392440523",
+      "null_in_list": null,
+      "string_in_list": "accepted",
+    },
+  ],
+  "primitive_bool": false,
+  "primitive_null": null,
+  "string_with_comma": "Foo:bar bar, baz bazmeh",
+}
+`;
+
+exports[`index parses struct with whitespace 1`] = `
+Object {
+  "key": "value",
+  "some": "email@some.com",
+  "someStruct": Object {
+    "a": "b",
+  },
+}
+`;
