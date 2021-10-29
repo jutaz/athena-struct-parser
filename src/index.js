@@ -10,7 +10,7 @@ const cleanKey = (key) => {
 
 const isArray = (value) => value[0] === '[' && value[value.length - 1] === ']'
 const isStruct = (value) => structRe.test(value.trim())
-const isNumber = num => !isNaN(num)
+const isNumber = (value) => !isNaN(value)
 
 const parseValue = (value) => {
   if (value === 'false') {
