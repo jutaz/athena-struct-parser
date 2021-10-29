@@ -10,6 +10,7 @@ const cleanKey = (key) => {
 
 const isArray = (value) => value[0] === '[' && value[value.length - 1] === ']'
 const isStruct = (value) => structRe.test(value.trim())
+const isNumber = num => !isNaN(num)
 
 const parseValue = (value) => {
   if (value === 'false') {
@@ -18,6 +19,8 @@ const parseValue = (value) => {
     return true
   } else if (value === 'null') {
     return null
+  } else if (isNumber(value)) {
+    return parseNumber(value)
   } else if (isArray(value)) {
     return parseArray(value).map(val => parseValue(val))
   } else if (isStruct(value)) {
@@ -141,6 +144,8 @@ const parseArray = (value) => {
   // Value can only be a primitive, split regularly.
   return noBrackets.split(/,\s*/)
 }
+
+const parseNumber = (value) => Number(value)
 
 module.exports = parseValue
 module.exports.default = parseValue
