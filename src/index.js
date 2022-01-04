@@ -145,7 +145,7 @@ const parseArray = (value) => {
   return noBrackets.split(/,\s*/)
 }
 
-const parseNumber = (value) => Number(value)
+const parseNumber = (value) => parseInt(value, 10)
 
 module.exports = parseValue
 module.exports.default = parseValue
