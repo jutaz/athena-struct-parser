@@ -3,6 +3,7 @@ const looseStructRe = /{.*?(?:(?:(?:},\s*?{)|,|{|)\s*?(?:\w+)=).*?}/
 
 const toKeyVal = (struct) => {
   let insideNestedStruct = 0
+  let insideArray = 0
   let structToKeyVal = []
   let startSlice = 0
   let keyValueSingePair = []
@@ -15,8 +16,12 @@ const toKeyVal = (struct) => {
       insideNestedStruct++
     } else if (struct[i] === "}") {
       insideNestedStruct--
+    } else if (struct[i] === "[") {
+      insideArray++
+    } else if (struct[i] === "]") {
+      insideArray--
     }
-    if (insideNestedStruct === 0) {
+    if (insideNestedStruct === 0 && insideArray == 0) {
       if (struct[i] === ",") {
         // the way how we get "key=value"
         keyValueSingePair = struct.slice(startSlice, i)
