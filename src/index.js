@@ -21,7 +21,7 @@ const toKeyVal = (struct) => {
     } else if (struct[i] === "]") {
       insideArray--
     }
-    if (insideNestedStruct === 0 && insideArray == 0) {
+    if (insideNestedStruct === 0 && insideArray === 0) {
       if (struct[i] === ",") {
         // the way how we get "key=value"
         keyValueSingePair = struct.slice(startSlice, i)
